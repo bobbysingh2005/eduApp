@@ -1,0 +1,25 @@
+{
+  "name": "eduapp",
+  "version": "1.0.0",
+  "description": "this is for education or management api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "eduApp"
+  },
+  "keywords": [
+    "education",
+    "application",
+    "management",
+    "api"
+  ],
+  "author": "bobby singh",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
