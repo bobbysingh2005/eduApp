@@ -1,6 +1,6 @@
 # eduApp
 <p>this is School, Colleges, Educational sector and administrator management application </p>
-# based on 
+<h4>based on </h4>
 <ul>
 <li>MongoDb</li>
 <li>nodeJs</li>
