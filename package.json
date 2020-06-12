@@ -1,8 +1,8 @@
 {
   "name": "eduapp",
   "version": "1.0.0",
-  "description": "this is School, Colleges, Education and administrator management application based on MongoDb, nodeJs and ReactJs",
-  "main": "server.js",
+  "description": "this is School, Colleges, Education sector and administrator management application based on MongoDb, nodeJs, expressJs reactJs and ReactJs-native",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,9 +17,9 @@
     "api"
   ],
   "author": "bobby singh",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "body-parser": "latest",
-    "express": "latest"
+
+
   }
 }
