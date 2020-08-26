@@ -52,7 +52,7 @@
     "test:watch": "jest --watch",
     "clean": "rimraf dist",
     "pretranspile": "npm run clean",
-    "transpile": "babel ./src --out-dir=dist --presets=@babel/preset-env --ignore='node_modules/**/*','dist/**/*','test/**/*' --copy-files --no-copy-ignored --source-maps",
+    "transpile": "babel ./src --out-dir dist --presets=@babel/preset-env --copy-files --source-maps",
     "build": "npm run transpile"
   }
 }

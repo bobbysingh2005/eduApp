@@ -4,6 +4,11 @@
   "description": "this is School, Colleges, Education sector and administrator management application based on MongoDb, nodeJs, expressJs reactJs and ReactJs-native",
   "main": "index.js",
   "scripts": {
+    "start:Api": "cd api && npm start",
+    "start:Mob": "cd mobile && npm start",
+    "start:Web": "cd website && npm start",
+    "start:Das": "cd dashboard && npm start",
+    "dev:Api": "cd api && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
