@@ -1,3 +1,8 @@
 node_modules/
 dist/
 yarn.*
+backend/package-lock.json
+frontend/package-lock.json
+mobile/package-lock.json
+api/package-lock.json
+
