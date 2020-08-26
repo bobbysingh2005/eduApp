@@ -1,4 +1,4 @@
 node_modules/
 dist/
 yarn.*
-edu.code-workspace
+*.code-workspace
