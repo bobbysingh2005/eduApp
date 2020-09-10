@@ -18,7 +18,7 @@ App.use(Logger('tiny'));
 
 /* use Routes */
 App.get('/test', (req, res)=>res.json({ message: "pass" }));
-App.get('/', (req,res)=>res.status(200).send(`Welcome to Edu App Api`));
+App.get('/', (req,res)=>res.status(200).send(`Welcome to Edu App Api `));
 App.use('/api', routes);
 
 //const server = App.listen(port, ()=>console.log(`EduAppApi server started on http://localhost:${port} \n press ctrl + c to exit`));
