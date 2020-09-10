@@ -6,6 +6,9 @@ edu.code-workspace
 dev/
 demo/
 .dockerignore
+./api/.dockerignore
 dockerfile
+./api/dockerfile
 docker-*
+./api/docker-*
 nginx.*
