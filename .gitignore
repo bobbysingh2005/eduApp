@@ -3,3 +3,9 @@ dist/
 yarn.*
 *.code-workspace
 edu.code-workspace
+dev/
+demo/
+.dockerignore
+dockerfile
+docker-*
+nginx.*

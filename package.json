@@ -9,7 +9,9 @@
     "start:Web": "cd website && npm start",
     "start:Das": "cd dashboard && npm start",
     "dev:Api": "cd api && npm run dev",
-    "dev:Das": "cd dashboard && npm run dev"
+    "dev:Das": "cd dashboard && npm run dev",
+    "dev:Web": "cd website && npm run dev",
+    "build:Api": "cd api && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
