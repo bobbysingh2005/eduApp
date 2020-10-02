@@ -1,0 +1,6 @@
+.dockerignore 
+/Dockerfile 
+/docker-compose.yml 
+/static 
+/web 
+/api 
