@@ -8,3 +8,4 @@ nginx.conf
 nginx.conf 
 mo-app 
 vue-app 
+node_modules 
