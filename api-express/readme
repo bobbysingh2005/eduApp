@@ -1,0 +1,15 @@
+
+users:
+profileType,
+name,
+age,
+dateOfBirth,
+bloodGroup,
+class,
+classGroup,
+address,
+city,
+state,
+country,
+role,
+subjects,
