@@ -4,12 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-graphql": "^0.12.0",
     "graphql": "^15.4.0",
-    "mongodb": "^3.6.3",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.8"
   },
   "devDependencies": {
