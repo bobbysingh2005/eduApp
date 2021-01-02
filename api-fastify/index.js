@@ -1,12 +1,17 @@
-const fastify = require('fastify');
+import fastify from 'fastify';
+const port = process.env.PORT || 3001;
 
-fastify.register(require('fastify-cors'));
-fastify.register(require('fastify-routes'));
+const api = fastify({ logger: true});
+api.register(require('fastify-cors'));
+api.register(require('fastify-routes'));
+api.get('/', (request, reply)=>{
+    return { hello: 'world'}
+})
 
-fastify.listen(3001, (error, address)=>{
-if(error){
-fastify.log.error(error);
-process.exit(1);
-};//endif;
-fastify.log.info(address);
-});//endListen;
+api.listen(port, (error, address)=>{
+    if(error) {
+        api.log.error(error);
+        process.exit(1);
+    };//endif;
+api.log.info(` server start on ${address}`);
+})

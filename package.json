@@ -1,0 +1,25 @@
+{
+  "name": "eduapp",
+  "version": "1.0.0",
+  "description": "<h4>Description</h4>\r <p> eduApp is management software which  helps education providers like schoole, colleges and other classes, it helps to manage complex functions such as timetable, attendance, fees, notifications, staff, salary, etc. </p>",
+  "main": "index.js",
+  "scripts": {
+"api-fastify": "cd api-fastify && npm run dev",
+"app-vue": "cd app-vue && npm start",
+"dashboard": "npm-run-all -p api-fastify app-vue"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobbysingh2005/eduapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bobbysingh2005/eduapp/issues"
+  },
+  "homepage": "https://github.com/bobbysingh2005/eduapp#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

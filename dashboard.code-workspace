@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{"name": "api",
+			"path": "./api-fastify"
+		},
+		{
+			"name": "dashboard",
+			"path": "app-vue"
+		}
+	],
+	"settings": {}
+}

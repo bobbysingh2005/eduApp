@@ -4,7 +4,13 @@
   "description": "eduApp api for edu dashboard",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "npm run build",
+    "start": "node .",
+    "dev": "nodemon --exec babel-node ./index.js --presets=@babel/preset-env",
+    "clean": "rimraf build/*",
+    "transpile": "babel . --presets=@bable/preset-env --ignore=node_modules",
+    "prebuild": "npm run clean",
+    "build": "npm run transpile"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +20,10 @@
     "fastify-cors": "^5.1.0",
     "fastify-mongoose": "^0.3.0",
     "fastify-routes": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11"
   }
 }
