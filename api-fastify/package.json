@@ -1,16 +1,18 @@
 {
-  "name": "api-fastify-dashboard",
+  "name": "api-fastify",
   "version": "1.0.0",
+  "description": "eduApp api for edu dashboard",
   "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "fastify": "^3.9.2",
-    "fastify-cors": "^5.1.0",
-    "fastify-mongodb": "^2.0.1"
-  },
-  "description": "api for dashboard eduApp",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": ""
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.9.2",
+    "fastify-cors": "^5.1.0",
+    "fastify-mongoose": "^0.3.0",
+    "fastify-routes": "^3.0.1"
+  }
 }
