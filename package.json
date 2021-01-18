@@ -4,9 +4,12 @@
   "description": "<h4>Description</h4>\r <p> eduApp is management software which  helps education providers like schoole, colleges and other classes, it helps to manage complex functions such as timetable, attendance, fees, notifications, staff, salary, etc. </p>",
   "main": "index.js",
   "scripts": {
-"api-fastify": "cd api-fastify && npm run dev",
-"app-vue": "cd app-vue && npm start",
-"dashboard": "npm-run-all -p api-fastify app-vue"
+    "api-fastify": "cd api-fastify && npm run dev",
+    "api-express": "cd api-express && npm run dev",
+    "app-vue": "cd app-vue && npm start",
+    "app-react": "cd app-react && npm start",
+    "dashboard": "npm-run-all -p api-fastify app-vue",
+    "web": "npm-run-all -p api-express app-react"
   },
   "repository": {
     "type": "git",

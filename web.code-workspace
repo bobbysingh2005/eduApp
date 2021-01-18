@@ -1,11 +1,11 @@
 {
 	"folders": [
 		{"name": "api",
-			"path": "./api-fastify"
+			"path": "./api-express"
 		},
 		{
-			"name": "dashboard",
-			"path": "app-vue"
+			"name": "web",
+			"path": "app-react"
 		}
 	],
 	"settings": {}
