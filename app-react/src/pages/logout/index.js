@@ -8,7 +8,6 @@ const History = useHistory();
 const location = useLocation();
     const isLogged = Cookie.get('token');
 if(isLogged) {
-    alert(isLogged)
 Cookie.remove('token');
 return (
 <div>

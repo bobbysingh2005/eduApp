@@ -1,38 +1,38 @@
 // main layout
-import React, { Component } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
-import { Container } from 'reactstrap';
-import Sidebar from '../components/sidebar';
-
-
+import React, { Component, Fragment } from "react";
+import { useHistory, useLocation } from "react-router-dom";
+import { Container } from "reactstrap";
+import Sidebar from "../components/sidebar";
+import MainFooter from "../components/footer";
 
 class Layout extends Component {
-constructor(props){
+constructor(props) {
 super(props);
 this.state = {
-    isLogin: false,
-    author: {
-        user: '',
-        email: '',
-        role: '',
-        token: ''
-    }
-}
-};//endConstructor;
+isLogin: false,
+author: {
+user: "",
+email: "",
+role: "",
+token: "",
+},
+};
+} //endConstructor;
 
-componentDidMount(){
-
-}
-render(){
-// const {path, page}  = this.props;
-// const PageComponent = lazy(()=>import('../pages/'+page+'-page.js'));
+componentDidMount() {}
+render() {
 return (
-<div id="wrapper">
+<Fragment>
+<aside>
 <Sidebar {...this.props} />
-<Container fluid>
+</aside>
+<section>
 {this.props.children}
-</Container>
-</div>
-)}};//end;
+</section>
+<MainFooter />
+</Fragment>
+);
+}
+} //end;
 
 export default Layout;

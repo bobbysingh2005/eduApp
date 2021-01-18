@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'jquery/dist/jquery';
 import "bootstrap/dist/js/bootstrap";
 import "./main.css";
-
 const token = cookie.get('token') ? `barer ${cookie.get('token')}` : false;
 const Client = new ApolloClient({
   uri: 'http://localhost:3001/',
