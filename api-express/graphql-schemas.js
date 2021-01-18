@@ -14,24 +14,22 @@ groupAdmin
 type User {
 _id: String, user: String, password: String, rePassword: String, email: String, accountStatus: Status, private: String,
 detail: Detail,
-createdOn: Date,
-lastAccess: Date,
-updatedOn: Date
+createdOn: Date, lastAccess: Date, updatedOn: Date
 }
 
 type Detail {
 profileType: String, role: Roles, firstName: String, lastName: String, gender: Genders, dateOfBirth: Date, bloodGroup: String, classNo: String, classGroup: String, subjects: String,
 address: String, city: String, state: String, country: String, updatedOn: Date
 }
-
 input UserInput {
-firstName: String
-lastName: String
-email: String
-password: String
-rePassword: String
+    user: String, password: String, rePassword: String, email: String, accountStatus: String, userPrivate: String,
+detail: DetailInput
 }
-
+input DetailInput {
+    profileType: String, role: String, firstName: String, lastName: String, gender: String, dateOfBirth: Date, bloodGroup: String, 
+    standard: String, group: String, subjects: String,
+    address: String, city: String, state: String, country: String, updatedOn: Date
+}
 type Query {
 users: [User]!,
 User(id: String): User
@@ -39,6 +37,6 @@ User(id: String): User
 type Mutation {
 addUser(user: UserInput): User,
 removeUser(id: String): User,
-updateUser(user: UserInput): User
+updateUser(id: String, detail: UserInput): User
 }
 `);//TheEnd;

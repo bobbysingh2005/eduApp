@@ -61,9 +61,16 @@ return await db.Users.findByIdAndDelete({_id: id}, (err, result)=>{
     console.log(`remove is done user: ${result}`);
     return result;
 });
-}, //end;
-updateUser: (root)=>{
-console.log(`Update User id: ${root._id}`);
-
+},
+updateUser: async (root)=>{
+const { id, detail} = root;
+console.log(`Update User id: ${id}`);
+console.log(detail)
+return await db.Users.updateOne({_id: id}, {$set: detail}, (err, doc)=>{
+if(err) throw err;
+    console.log(`is exist ?`);
+console.log(doc)
+return doc;
+});
 }
 };//TheEnd;

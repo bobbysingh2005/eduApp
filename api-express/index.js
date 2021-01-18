@@ -16,25 +16,50 @@ api.use(bodyParser.json());
 api.use(cors());
 const SECRET_KEY = 'mySecretKey!';
 
-const LoginHandel =  async (req, res)=>{
-    const {user,password} = req.body;
-    console.log('login request', `user: ${user}, password: ${password}`);
-const validUser = await db.Users.findOne({user: user}, {_id:0, user:1, email:1, createdOn:1, lastAccess:1}, (err, doc)=>{
-    if(err) throw err;
-console.log(doc)
-    return doc;
-})
-
-if(!validUser){
+const LoginHandle =  async (req, res)=>{
+let {user, password} = req.body;
+console.log('login request', `user: ${user}, password: ${password}`);
+return await db.Users.findOne({user: user}, {_id:0, user:1, password:1, email:1, createdOn:1, lastAccess:1}, async (err, doc)=>{
+if(err) throw err;
+let result = await bcrypt.compare(password, doc.password);
+console.log(`result: ${result}`)
+if(result){
+const token = jwt.sign( user, SECRET_KEY);//end;
+return res.status(200).json({success: true, token: token});
+}else{
 return res.status(404).json({success: false, error: 'invalid user and password'});
 };//endif;
-const token = jwt.sign(
-    // {user, cdate: new Date()}, 
-    user,
-    SECRET_KEY)
-const result = {success: true, token: token};
-res.status(200).json(result);
-};//endLogin;
+});//end;
+};//endLoginHandle;
+
+const SignupHandle = async (req, res)=>{
+console.log(`SignUp request`);
+let nuser = req.body;
+nuser = {
+user: nuser.user,
+password: await bcrypt.hash(nuser.password, 10),
+rePassword: nuser.rePassword,
+email: nuser.email,
+contactNo: nuser.contactNo,
+accountStatus: 'pending',
+detail: {
+firstName: nuser.firstName,
+lastName: nuser.lastName,
+}
+};//endNuser;
+
+console.log(nuser)
+
+let newUserNow = db.Users(nuser);
+await newUserNow.save((err, result)=>{
+if(err) throw err;
+console.log("response");
+console.log(result);
+return res.status(200).json({ error: null, success: true, data: result });
+});//endSave;
+// const nerror = "invalid user and password";
+// res.status(401).json({error: nerror, success: false})
+};//end;
 
 const LoginVerifyHandel = async (req, res, next)=>{
 const token = (req.headers.authorization) ? req.headers.authorization.split(' ')[1] : false;
@@ -43,18 +68,15 @@ if(token){
 const verify = jwt.verify(token, SECRET_KEY);
 console.log(`verify: ${verify}`)
 };//endif;
-
 next();
 };//endVerify;
 
-api.post('/login', LoginHandel);
+api.post('/login', LoginHandle);
+api.post('/signup', SignupHandle);
 api.use('/', LoginVerifyHandel, graphqlHTTP({
-    schema: graphqlSchema,
-    rootValue: graphqlResolver,
-    context: {
-        headers: 'hello bolo'
-    },
-    graphiql: true
+schema: graphqlSchema,
+rootValue: graphqlResolver,
+graphiql: true
 }));//end;
 api.listen(port, ()=>{
 console.log(`eduApp express with graphql api started
