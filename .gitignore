@@ -9,3 +9,5 @@ nginx.conf
 mo-app 
 vue-app 
 node_modules 
+
+/*.code-workspace
